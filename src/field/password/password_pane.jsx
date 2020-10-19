@@ -4,16 +4,12 @@ import PasswordInput from '../../ui/input/password_input';
 import * as c from '../index';
 import { swap, updateEntity } from '../../store/index';
 import * as l from '../../core/index';
-import { setPassword, setShowPassword } from '../password';
+import { setPassword, toggleShowPassword } from '../password';
 
 export default class PasswordPane extends React.Component {
   handleChange = e => {
     const { lock, policy } = this.props;
     swap(updateEntity, 'lock', l.id(lock), setPassword, e.target.value, policy);
-  };
-  handleShowPasswordChange = e => {
-    const { lock } = this.props;
-    swap(updateEntity, 'lock', l.id(lock), setShowPassword, e.target.checked);
   };
 
   render() {
@@ -43,7 +39,7 @@ export default class PasswordPane extends React.Component {
         />
         {l.ui.allowShowPassword(lock) && (
           <div className="auth0-lock-show-password">
-            <input type="checkbox" id="slideOne" onChange={this.handleShowPasswordChange} />
+            <input type="checkbox" id="slideOne" onChange={toggleShowPassword} />
             <label htmlFor="slideOne" title={i18n.str('showPassword')} />
           </div>
         )}

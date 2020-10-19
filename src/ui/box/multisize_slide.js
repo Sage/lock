@@ -41,38 +41,38 @@ export default class Slider extends React.Component {
       const currentComponent = this.refs[current.key];
       const prevComponent = this.refs[prev.key];
 
-      const transition = (component, className, delay) => {
-        // eslint-disable-next-line
-        const node = ReactDOM.findDOMNode(component);
-        const activeClassName = `${className}-active`;
+      // const transition = (component, className, delay) => {
+      //   // eslint-disable-next-line
+      //   const node = ReactDOM.findDOMNode(component);
+      //   const activeClassName = `${className}-active`;
 
-        CSSCore.addClass(node, className);
+      //   CSSCore.addClass(node, className);
 
-        setTimeout(() => CSSCore.addClass(node, activeClassName), 17);
+      //   setTimeout(() => CSSCore.addClass(node, activeClassName), 17);
 
-        if (delay) {
-          setTimeout(() => {
-            CSSCore.removeClass(node, className);
-            CSSCore.removeClass(node, activeClassName);
-          }, delay);
-        }
-      };
+      //   if (delay) {
+      //     setTimeout(() => {
+      //       CSSCore.removeClass(node, className);
+      //       CSSCore.removeClass(node, activeClassName);
+      //     }, delay);
+      //   }
+      // };
 
       const callback = slide => {
         currentComponent.componentWillSlideIn(slide);
-        const classNamePrefix = reverse ? 'reverse-' : '';
-        transition(currentComponent, `${classNamePrefix}${transitionName}-enter`, this.props.delay);
-        transition(prevComponent, `${classNamePrefix}${transitionName}-exit`);
+        // const classNamePrefix = reverse ? 'reverse-' : '';
+        // transition(currentComponent, `${classNamePrefix}${transitionName}-enter`, this.props.delay);
+        // transition(prevComponent, `${classNamePrefix}${transitionName}-exit`);
 
-        this.timeout = setTimeout(() => {
-          this.setState({
-            children: { current: this.state.children.current },
-            transitionName: this.props.transitionName
-          });
-          currentComponent.componentDidSlideIn(::this.props.onDidAppear);
-          this.props.onDidSlide();
-          this.timeout = null;
-        }, this.props.delay);
+        // this.timeout = setTimeout(() => {
+        this.setState({
+          children: { current: this.state.children.current },
+          transitionName: this.props.transitionName
+        });
+        currentComponent.componentDidSlideIn(::this.props.onDidAppear);
+        this.props.onDidSlide();
+        this.timeout = null;
+        // }, this.props.delay);
       };
 
       this.props.onWillSlide();

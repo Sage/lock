@@ -19,6 +19,7 @@ import * as i18n from './i18n';
 import { go } from './sync';
 
 import css from '../css/index.styl';
+import ConfirmPasswordPane from './field/password/confirm_password_pane';
 
 export default class Base extends EventEmitter {
   constructor(clientID, domain, options = {}, engine) {
@@ -142,6 +143,7 @@ export default class Base extends EventEmitter {
           if (screen.name === 'main.login') {
             l.emitEvent(m, 'signin ready');
           } else if (screen.name === 'main.signUp') {
+            ConfirmPasswordPane.showConfirmPasswordInvalid = false;
             l.emitEvent(m, 'signup ready');
           } else if (screen.name === 'forgotPassword') {
             l.emitEvent(m, 'forgot_password ready');

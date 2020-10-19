@@ -1,6 +1,7 @@
 import React from 'react';
 import EmailPane from '../../field/email/email_pane';
 import PasswordPane from '../../field/password/password_pane';
+import ConfirmPasswordPane from '../../field/password/confirm_password_pane';
 import UsernamePane from '../../field/username/username_pane';
 import CustomInput from '../../field/custom_input';
 import {
@@ -73,6 +74,10 @@ export default class SignUpPane extends React.Component {
       />
     );
 
+    const confirmPasswordPane = !onlyEmail && (
+      <ConfirmPasswordPane i18n={i18n} lock={model} model={model} />
+    );
+
     return (
       <div>
         {header}
@@ -82,10 +87,11 @@ export default class SignUpPane extends React.Component {
           placeholder={emailInputPlaceholder}
           strictValidation={signUpFieldsStrictValidation(model)}
         />
+        {fields}
         {usernamePane}
         {passwordPane}
+        {confirmPasswordPane}
         {captchaPane}
-        {fields}
       </div>
     );
   }

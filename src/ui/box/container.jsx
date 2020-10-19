@@ -5,6 +5,7 @@ import { CloseButton } from './button';
 import * as l from '../../core/index';
 import * as c from '../../field/index';
 import { swap, updateEntity } from '../../store/index';
+import ConfirmPasswordPane from '../../field/password/confirm_password_pane';
 
 const badgeSvg = (
   <svg focusable="false" width="58px" height="21px" viewBox="0 0 462 168">
@@ -99,6 +100,8 @@ export default class Container extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    ConfirmPasswordPane.showConfirmPasswordInvalid = true;
 
     this.checkConnectionResolver(() => {
       const { submitHandler } = this.props;

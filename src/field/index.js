@@ -101,6 +101,17 @@ export function setOptionField(m, field, option) {
 }
 
 export function isFieldValid(m, field) {
+  if (field === 'confirm_password') {
+    let passwordIsValid = m.getIn(['field', 'password', 'valid']);
+    let password = getFieldValue(m, 'password');
+    let confirmPassword = getFieldValue(m, field);
+
+    if (passwordIsValid && password && confirmPassword) {
+      return password === confirmPassword;
+    }
+    return false;
+  }
+
   return m.getIn(['field', field, 'valid']);
 }
 

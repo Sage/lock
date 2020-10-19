@@ -55,7 +55,7 @@ export function logIn(id, needsMFA = false) {
 
 export function signUp(id) {
   const m = read(getEntity, 'lock', id);
-  const fields = ['email', 'password'];
+  const fields = ['email', 'password', 'confirm_password'];
   if (databaseConnectionRequiresUsername(m)) fields.push('username');
   additionalSignUpFields(m).forEach(x => fields.push(x.get('name')));
 
@@ -216,10 +216,13 @@ function resetPasswordSuccess(id) {
     );
 
     // TODO: should be handled by box
-    setTimeout(() => {
-      const successMessage = i18n.html(m, ['success', 'forgotPassword']);
-      swap(updateEntity, 'lock', id, l.setGlobalSuccess, successMessage);
-    }, 500);
+    // setTimeout(() => {
+    const successMessage = i18n.html(m, ['success', 'forgotPassword']);
+    swap(updateEntity, 'lock', id, l.setGlobalSuccess, successMessage);
+    // }, 500);
+    if (document.getElementsByName('password').length === 1) {
+      document.getElementsByName('password')[0].focus();
+    }
   } else {
     if (l.ui.autoclose(m)) {
       closeLock(id);
