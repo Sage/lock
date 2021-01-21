@@ -79,7 +79,7 @@ SubmitButton.propTypes = {
 };
 
 const MESSAGE_ANIMATION_DURATION = 250;
-const AUXILIARY_ANIMATION_DURATION = 350;
+const AUXILIARY_ANIMATION_DURATION = 0;
 
 export default class Chrome extends React.Component {
   constructor(props) {
@@ -144,6 +144,7 @@ export default class Chrome extends React.Component {
 
       if (input) {
         if (this.mainScreenName(prevProps.screenName) !== this.mainScreenName()) {
+          setTimeout(() => this.setFocusOnInput(input), AUXILIARY_ANIMATION_DURATION);
           this.inputToFocus = input;
         } else {
           // TODO clear timeout
