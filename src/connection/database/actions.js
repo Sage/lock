@@ -93,6 +93,9 @@ export function signUp(id) {
             params.user_metadata[fieldName] = fieldValue;
             break;
         }
+        if (fieldName === 'given_name' || fieldName === 'family_name') {
+          params[fieldName] = fieldValue;
+        }
       });
     }
 
