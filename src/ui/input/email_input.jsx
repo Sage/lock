@@ -23,7 +23,7 @@ export default class EmailInput extends React.Component {
   }
 
   render() {
-    const { lockId, invalidHint, isValid, autoComplete, ...props } = this.props;
+    const { lockId, invalidHint, isValid, autoComplete, i18n, ...props } = this.props;
     const { focused } = this.state;
 
     return (
@@ -34,6 +34,9 @@ export default class EmailInput extends React.Component {
         name="email"
         icon={svg}
       >
+        <label htmlFor={`${lockId}-email`} className="labels">
+          {i18n.group('placeholders')['Email']}
+        </label>
         <input
           id={`${lockId}-email`}
           ref="input"

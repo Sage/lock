@@ -46,6 +46,7 @@ export default class ConfirmPasswordPane extends React.Component {
           }}
           value={c.getFieldValue(lock, 'confirm_password')}
           isValid={validator(c.getFieldValue(lock, 'confirm_password'))}
+          i18n={i18n}
         />
         {l.ui.allowShowPassword(lock) && (
           <div className="auth0-lock-show-password">

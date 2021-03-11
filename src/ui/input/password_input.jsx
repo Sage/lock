@@ -44,6 +44,8 @@ export default class PasswordInput extends React.Component {
       strengthMessages,
       value,
       showPassword,
+      i18n,
+      lockId,
       lock,
       ...props
     } = this.props;
@@ -66,8 +68,12 @@ export default class PasswordInput extends React.Component {
         name="password"
         icon={icon}
       >
+        <label htmlFor={`${lockId}-password`} className="labels">
+          {i18n.group('placeholders')['Password']}
+        </label>
         <input
           ref="input"
+          id={`${lockId}-password`}
           type={showPassword ? 'text' : 'password'}
           name="password"
           className="auth0-lock-input"

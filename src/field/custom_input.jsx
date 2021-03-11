@@ -15,14 +15,16 @@ const CustomInput = ({
   placeholderHTML,
   type,
   validator,
-  value
+  value,
+  i18n
 }) => {
   const props = {
     iconUrl,
     isValid: !isFieldVisiblyInvalid(model, name),
     name,
     ariaLabel,
-    placeholder
+    placeholder,
+    i18n
   };
 
   switch (type) {

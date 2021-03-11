@@ -36,6 +36,8 @@ export default class PasswordPane extends React.Component {
           policy={policy}
           showPassword={c.getFieldValue(lock, 'showPassword', false)}
           lock={lock}
+          i18n={i18n}
+          lockId={l.id(lock)}
         />
         {l.ui.allowShowPassword(lock) && (
           <div className="auth0-lock-show-password">

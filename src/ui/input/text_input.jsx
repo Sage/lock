@@ -21,6 +21,7 @@ export default class TextInput extends React.Component {
       ariaLabel,
       onChange,
       value,
+      i18n,
       ...props
     } = this.props;
     let { icon } = this.props;
@@ -30,6 +31,9 @@ export default class TextInput extends React.Component {
       icon = <img className="auth0-lock-custom-icon" alt={ariaLabel || name} src={iconUrl} />;
     }
 
+    let isGivenNameField = this.props.name.toLowerCase() === 'given_name';
+    let isFamilyNameField = this.props.name.toLowerCase() === 'family_name';
+
     return (
       <InputWrap
         focused={focused}
@@ -38,6 +42,16 @@ export default class TextInput extends React.Component {
         name={name}
         icon={icon}
       >
+        {isGivenNameField ? (
+          <label htmlFor={`${lockId}-${name}`} className="labels">
+            {i18n.group('placeholders')['Given_name']}
+          </label>
+        ) : isFamilyNameField ? (
+          <label htmlFor={`${lockId}-${name}`} className="labels">
+            {i18n.group('placeholders')['Family_name']}
+          </label>
+        ) : null}
+
         <input
           id={`${lockId}-${name}`}
           ref="input"

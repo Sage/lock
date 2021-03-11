@@ -12,7 +12,17 @@ export default class ConfirmPasswordInput extends React.Component {
   }
 
   render() {
-    const { lockId, iconUrl, invalidHint, isValid, name, ariaLabel, onChange, value } = this.props;
+    const {
+      lockId,
+      iconUrl,
+      invalidHint,
+      isValid,
+      name,
+      ariaLabel,
+      onChange,
+      value,
+      i18n
+    } = this.props;
     let { icon } = this.props;
     const { focused } = this.state;
 
@@ -28,8 +38,11 @@ export default class ConfirmPasswordInput extends React.Component {
         name="confirm_password"
         icon={icon}
       >
+        <label htmlFor={`${lockId}-confirm_password`} className="labels">
+          {i18n.group('placeholders')['Confirm_password']}
+        </label>
         <input
-          id={`${lockId}-${'confirm_password'}`}
+          id={`${lockId}-confirm_password`}
           ref="input"
           type="password"
           name="confirm_password"
