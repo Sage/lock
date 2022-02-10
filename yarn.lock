@@ -7573,10 +7573,10 @@ mime-types@~1.0.1:
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-1.0.2.tgz#995ae1392ab8affcbfcb2641dd054e943c0d5dce"
   integrity sha1-mVrhOSq4r/y/yyZB3QVOlDwNXc4=
 
-mime@1.2.2, mime@~1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.7.tgz#c7a13f33a7073d9900f288436b06b3a16200865b"
-  integrity sha1-x6E/M6cHPZkA8ohDawazoWIAhls=
+mime@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.2.tgz#b9d6355bf53e8d7d56693130e451daff340148cf"
+  integrity sha1-udY1W/U+jX1WaTEw5FHa/zQBSM8=
 
 mime@1.2.5:
   version "1.2.5"
@@ -7597,6 +7597,11 @@ mime@~1.2.11, mime@~1.2.9:
   version "1.2.11"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.11.tgz#58203eed86e3a5ef17aed2b7d9ebd47f0a60dd10"
   integrity sha1-WCA+7Ybjpe8XrtK32evUfwpg3RA=
+
+mime@~1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-1.2.7.tgz#c7a13f33a7073d9900f288436b06b3a16200865b"
+  integrity sha1-x6E/M6cHPZkA8ohDawazoWIAhls=
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -11235,9 +11240,9 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 ua-parser-js@^0.7.18:
-  version "0.7.22"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.22.tgz#960df60a5f911ea8f1c818f3747b99c6e177eae3"
-  integrity sha512-YUxzMjJ5T71w6a8WWVcMGM6YWOTX27rCoIQgLXiWaxqXSx9D7DNjiGWn1aJIRSQ5qr0xuhra77bSIh6voR/46Q==
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
+  integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
 
 uc-first-array@^1.0.0:
   version "1.1.10"
